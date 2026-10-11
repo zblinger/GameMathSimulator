@@ -67,9 +67,9 @@ Each spin independently selects one stop from each reel with equal probability.
 
 The total number of possible reel-stop combinations is the product of the stop counts:
 
-\[
+$$
 5 \times 5 \times 5 = 125
-\]
+$$
 
 All 125 stop combinations are equally likely.
 
@@ -79,13 +79,13 @@ For example, Cherry appears twice on Reel 1, once on Reel 2, and three times on 
 
 Therefore, the probability of three Cherries is:
 
-\[
+$$
 P(CCC) = \frac{2}{5} \times \frac{1}{5} \times \frac{3}{5}
-\]
+$$
 
-\[
+$$
 P(CCC) = \frac{6}{125} = 0.048
-\]
+$$
 
 This corresponds to a 4.8% probability.
 
@@ -114,9 +114,9 @@ Rather than enumerating every physical reel-stop combination, the analyzer enume
 
 For a three-reel outcome:
 
-\[
+$$
 P(A,B,C) = P_1(A) \times P_2(B) \times P_3(C)
-\]
+$$
 
 where each probability represents the frequency of the corresponding symbol on its reel.
 
@@ -126,29 +126,29 @@ This approach accounts for repeated symbols while avoiding double-counting equiv
 
 Expected payout represents the probability-weighted average payout over all possible outcomes.
 
-\[
+$$
 E[X] = \sum_i P(x_i)x_i
-\]
+$$
 
 where:
 
-- \(X\) is the payout from a single spin.
-- \(P(x_i)\) is the probability of outcome \(i\).
-- \(x_i\) is the payout associated with that outcome.
+- $X$ is the payout from a single spin.
+- $P(x_i)$ is the probability of outcome $i$.
+- $x_i$ is the payout associated with that outcome.
 
 For the current game:
 
-\[
+$$
 E[X] = 3(0.048) + 5(0) + 20(0.008) + 100(0.008)
-\]
+$$
 
-\[
+$$
 E[X] = 0.144 + 0 + 0.160 + 0.800
-\]
+$$
 
-\[
+$$
 \boxed{E[X] = 1.104}
-\]
+$$
 
 The theoretical expected payout is 1.104 credits per spin.
 
@@ -156,19 +156,19 @@ The theoretical expected payout is 1.104 credits per spin.
 
 Return to player represents the expected proportion of wagered credits returned to the player.
 
-\[
+$$
 RTP = \frac{E[X]}{\text{Wager Per Spin}} \times 100\%
-\]
+$$
 
 With a wager of one credit:
 
-\[
+$$
 RTP = \frac{1.104}{1} \times 100\%
-\]
+$$
 
-\[
+$$
 \boxed{RTP = 110.4\%}
-\]
+$$
 
 This is the theoretical RTP derived from the game's probability distribution.
 
@@ -178,19 +178,19 @@ Actual RTP observed during a finite simulation will vary because outcomes are ra
 
 Hit frequency represents the probability that a spin produces a positive payout.
 
-\[
+$$
 HF = P(X > 0)
-\]
+$$
 
 For the current pay table:
 
-\[
+$$
 HF = 0.048 + 0.008 + 0.008
-\]
+$$
 
-\[
+$$
 \boxed{HF = 0.064 = 6.4\%}
-\]
+$$
 
 Therefore, approximately 6.4% of spins are expected to produce a winning outcome.
 
@@ -200,37 +200,37 @@ This is a theoretical probability, not a guarantee that exactly 6.4% of spins wi
 
 The second raw moment is used to calculate payout variance.
 
-\[
+$$
 E[X^2] = \sum_i P(x_i)x_i^2
-\]
+$$
 
 For the current game:
 
-\[
+$$
 E[X^2] = 3^2(0.048) + 20^2(0.008) + 100^2(0.008)
-\]
+$$
 
-\[
+$$
 \boxed{E[X^2] = 83.632}
-\]
+$$
 
 ### Variance
 
 Variance measures the spread of payouts around their expected value.
 
-\[
+$$
 Var(X) = E[X^2] - E[X]^2
-\]
+$$
 
 Substituting the calculated values:
 
-\[
+$$
 Var(X) = 83.632 - 1.104^2
-\]
+$$
 
-\[
+$$
 \boxed{Var(X) = 82.413184}
-\]
+$$
 
 A larger variance indicates greater variation in individual payouts.
 
@@ -238,17 +238,17 @@ A larger variance indicates greater variation in individual payouts.
 
 Standard deviation is the square root of variance.
 
-\[
+$$
 \sigma = \sqrt{Var(X)}
-\]
+$$
 
-\[
+$$
 \sigma = \sqrt{82.413184}
-\]
+$$
 
-\[
+$$
 \boxed{\sigma \approx 9.078171}
-\]
+$$
 
 Standard deviation expresses payout variability in the same units as the payout itself.
 
@@ -258,21 +258,21 @@ The relatively large standard deviation reflects the presence of an infrequent 1
 
 Standard error describes the variability of the simulated mean payout across repeated simulations.
 
-For \(n\) independent spins:
+For $n$ independent spins:
 
-\[
+$$
 SE = \frac{\sigma}{\sqrt{n}}
-\]
+$$
 
 For 100,000 spins:
 
-\[
+$$
 SE = \frac{9.078171}{\sqrt{100000}}
-\]
+$$
 
-\[
+$$
 \boxed{SE \approx 0.028708}
-\]
+$$
 
 As the number of simulated spins increases, standard error decreases.
 
@@ -282,25 +282,25 @@ This means that larger simulations generally produce RTP estimates closer to the
 
 The application calculates an approximate 95% sampling range for the simulated mean payout using the theoretical expected payout and standard error.
 
-\[
+$$
 \text{Lower Bound} = E[X] - 1.96(SE)
-\]
+$$
 
-\[
+$$
 \text{Upper Bound} = E[X] + 1.96(SE)
-\]
+$$
 
 For 100,000 spins:
 
-\[
+$$
 1.104 \pm 1.96(0.028708)
-\]
+$$
 
 The resulting approximate RTP range is:
 
-\[
+$$
 \boxed{104.773\% \leq RTP \leq 116.027\%}
-\]
+$$
 
 The application compares the simulated RTP against these bounds.
 
@@ -335,17 +335,17 @@ After completing the requested number of spins, the application calculates:
 
 Simulated RTP is calculated as:
 
-\[
+$$
 \text{Simulated RTP} =
 \frac{\text{Total Paid}}{\text{Total Wagered}}
-\]
+$$
 
 Simulated hit frequency is calculated as:
 
-\[
+$$
 \text{Simulated Hit Frequency} =
 \frac{\text{Winning Spins}}{\text{Total Spins}}
-\]
+$$
 
 These statistics are then compared against the exact theoretical calculations.
 
