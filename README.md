@@ -163,7 +163,7 @@ $$
 With a wager of one credit:
 
 $$
-RTP = \frac{1.104}{1} \times 100\%
+RTP = \frac{1.104}{1} \times 100\text{\%}
 $$
 
 $$
@@ -408,8 +408,6 @@ The difference between theoretical and simulated RTP illustrates the variability
 git clone https://github.com/zblinger/GameMathSimulator.git
 cd GameMathSimulator
 ```
-
-> Update the repository URL if the final GitHub repository uses a different name.
 
 ### Build the Application
 
