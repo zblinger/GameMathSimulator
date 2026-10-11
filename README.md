@@ -157,7 +157,7 @@ The theoretical expected payout is 1.104 credits per spin.
 Return to player represents the expected proportion of wagered credits returned to the player.
 
 $$
-RTP = \frac{E[X]}{\text{Wager Per Spin}} \times 100\%
+RTP = \frac{E[X]}{\text{Wager Per Spin}} \times 100\text{\%}
 $$
 
 With a wager of one credit:
@@ -167,7 +167,7 @@ RTP = \frac{1.104}{1} \times 100\%
 $$
 
 $$
-\boxed{RTP = 110.4\%}
+\boxed{\mathrm{RTP} = 110.4\text{\%}}
 $$
 
 This is the theoretical RTP derived from the game's probability distribution.
@@ -189,7 +189,7 @@ HF = 0.048 + 0.008 + 0.008
 $$
 
 $$
-\boxed{HF = 0.064 = 6.4\%}
+\boxed{\mathrm{HF} = 0.064 = 6.4\text{\%}}
 $$
 
 Therefore, approximately 6.4% of spins are expected to produce a winning outcome.
@@ -299,7 +299,7 @@ $$
 The resulting approximate RTP range is:
 
 $$
-\boxed{104.773\% \leq RTP \leq 116.027\%}
+\boxed{104.773\text{\%} \leq \mathrm{RTP} \leq 116.027\text{\%}}
 $$
 
 The application compares the simulated RTP against these bounds.
